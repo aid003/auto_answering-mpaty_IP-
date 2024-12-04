@@ -59,6 +59,7 @@ export async function botAvito() {
         currentToken,
         "Здравствуйте"
       );
+
       await sleep(20000);
 
       const message = await chekIdAdvForAnswer(chat.context.value.id);
@@ -66,6 +67,7 @@ export async function botAvito() {
       await sendMessage(process.env.USER_ID, chat.id, currentToken, message);
       await sleep(2000);
       const contact = await prisma.messages.findFirst({ where: { id: 5 } });
+
       await sendMessage(process.env.USER_ID, chat.id, currentToken, contact);
 
       let messageStr = "🟢 Новый клиент";

@@ -59,28 +59,28 @@ export async function commandHandler() {
         await bot_tg.sendMessage(msg.chat.id, "Вы уже в рассылке.");
       }
     }
-    if (msg.text === "/add_message") {
-      try {
-        await bot_tg.sendMessage(msg.chat.id, "Выберите группу объявлений", {
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: "Внешняя реклама", callback_data: "public_adv" }],
-              [{ text: "Телеграмм", callback_data: "telegram" }],
-              [{ text: "Авитолог", callback_data: "avitolog" }],
-              [
-                {
-                  text: "Аналитика для Авито",
-                  callback_data: "analitics_for_avito",
-                },
-              ],
-              [{ text: "Общий ответ", callback_data: "all" }],
-              [{ text: "Отмена", callback_data: "cancel" }],
-            ],
-          },
-        });
-      } catch (error) {
-        await bot_tg.sendMessage(msg.chat.id, "Ошибка добавления текстов");
-      }
-    }
+    // if (msg.text === "/add_message") {
+    //   try {
+    //     await bot_tg.sendMessage(msg.chat.id, "Выберите группу объявлений", {
+    //       reply_markup: {
+    //         inline_keyboard: [
+    //           [{ text: "Внешняя реклама", callback_data: "public_adv" }],
+    //           [{ text: "Телеграмм", callback_data: "telegram" }],
+    //           [{ text: "Авитолог", callback_data: "avitolog" }],
+    //           [
+    //             {
+    //               text: "Аналитика для Авито",
+    //               callback_data: "analitics_for_avito",
+    //             },
+    //           ],
+    //           [{ text: "Общий ответ", callback_data: "all" }],
+    //           [{ text: "Отмена", callback_data: "cancel" }],
+    //         ],
+    //       },
+    //     });
+    //   } catch (error) {
+    //     await bot_tg.sendMessage(msg.chat.id, "Ошибка добавления текстов");
+    //   }
+    // }
   });
 }
