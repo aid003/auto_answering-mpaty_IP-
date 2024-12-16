@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 export async function chekIdAdvForAnswer(idAdv) {
   let message = "";
   const currentIdAdv = [
-    { id: 4453393817, type: "telegram" },
-    { id: 4516692170, type: "telegram" },
+    { id: 4471212654, type: "telegram" },
+    { id: 4471026215, type: "telegram" },
   ];
 
   //   { id: 1, typeAdvertizing: 'all', text: 'внешка' },
