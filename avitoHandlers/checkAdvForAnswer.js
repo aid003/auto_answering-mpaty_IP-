@@ -9,11 +9,6 @@ export async function chekIdAdvForAnswer(idAdv) {
     { id: 4471026215, type: "telegram" },
   ];
 
-  //   { id: 1, typeAdvertizing: 'all', text: 'внешка' },
-  //   { id: 2, typeAdvertizing: 'avitolog', text: 'Авитолог' },
-  //   { id: 3, typeAdvertizing: 'telegram', text: 'телега' },
-  //   { id: 4, typeAdvertizing: 'analit', text: 'аналитика' }
-
   for (let adv of currentIdAdv) {
     if (adv.id === idAdv) {
       message = await prisma.messages.findUnique({

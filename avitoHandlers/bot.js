@@ -60,7 +60,7 @@ export async function botAvito() {
         "Здравствуйте"
       );
 
-      await sleep(10000);
+      await sleep(9000);
 
       const message = await chekIdAdvForAnswer(chat.context.value.id);
 
