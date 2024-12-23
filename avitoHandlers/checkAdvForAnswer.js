@@ -7,6 +7,8 @@ export async function chekIdAdvForAnswer(idAdv) {
   const currentIdAdv = [
     { id: 4471212654, type: "telegram" },
     { id: 4471026215, type: "telegram" },
+    { id: 4470711478, type: "avito" },
+    { id: 4470892620, type: "avito" },
   ];
 
   for (let adv of currentIdAdv) {
@@ -19,16 +21,18 @@ export async function chekIdAdvForAnswer(idAdv) {
           text: true,
         },
       });
-    } else {
-      message = await prisma.messages.findUnique({
-        where: {
-          typeAdvertizing: "all",
-        },
-        select: {
-          text: true,
-        },
-      });
     }
+  }
+
+  if (message === "") {
+    message = await prisma.messages.findUnique({
+      where: {
+        typeAdvertizing: "all",
+      },
+      select: {
+        text: true,
+      },
+    });
   }
 
   return message.text;
